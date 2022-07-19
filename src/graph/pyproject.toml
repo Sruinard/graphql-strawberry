@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "graph"
+version = "0.1.0"
+description = ""
+authors = ["Sruinard <41334908+Sruinard@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+strawberry-graphql = "^0.117.1"
+fastapi = {extras = ["all"], version = "^0.78.0"}
+taskipy = "^1.10.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+server = "uvicorn graph.app:app --host 0.0.0.0 --port 8000 --reload"
